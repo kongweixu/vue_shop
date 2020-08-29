@@ -183,11 +183,9 @@ export default {
       const i = this.addForm.pics.findIndex(x => x.pic === filePath)
       // 3.调用 splice 方法把图片信息对象从数组中移除
       this.addForm.pics.splice(i, 1)
-      console.log(this.addForm)
     },
     // 监听图片上传成功的事件
     handleSuccess (response) {
-      console.log(response)
       // 1.先拼接得到一个图片信息对象 2.将图片信息对象 push 到 pics 数组中
       const picInfo = { pic: response.data.tmp_path }
       this.addForm.pics.push(picInfo)

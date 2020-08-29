@@ -166,7 +166,6 @@ export default {
     },
     // tab页签点击事件的处理函数
     handleTabClick () {
-      console.log(this.activeName)
       this.getParamsData()
     },
     // 获取参数的列表数据
@@ -177,7 +176,6 @@ export default {
         return
       }
       // 选中的是3级分类
-      console.log(this.selectedCateKeys)
       // 根据所选分类的 id ，和当前所处的面板获取对应的参数
       const { data: res } = await this.$http.get(`categories/${this.cateId}/attributes`, { params: { sel: this.activeName } })
       if (res.meta.status !== 200) {
@@ -190,7 +188,6 @@ export default {
         // 文本框中输入的值
         item.inputValue = ''
       })
-      console.log(res.data)
       if (this.activeName === 'many') {
         this.manyTableData = res.data
       } else {
